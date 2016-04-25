@@ -1,4 +1,4 @@
 # MIPS-32-Bit-Verilog
 
-iverilog *.v
-./a.out
+1. iverilog *.v
+2. ./a.out
