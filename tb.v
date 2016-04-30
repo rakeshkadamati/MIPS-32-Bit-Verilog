@@ -104,6 +104,11 @@ end
 //	in2 <= in2 - 1'b1;
 //end
 
+initial begin
+      $dumpfile("dump.vcd");
+      $dumpvars(0, top);
+  end
+
 
 initial begin
 	//in=6'b000000;
@@ -117,4 +122,3 @@ initial begin
 	end
 
 endmodule
-
