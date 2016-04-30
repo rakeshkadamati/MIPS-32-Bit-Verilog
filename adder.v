@@ -109,8 +109,4 @@ xor X30(m[30],b[30],1);
 xor X31(m[31],b[31],1);
 
 
-thirtytwobitadder adding(a,m,carryout,s,1);
-
 endmodule
-
-
