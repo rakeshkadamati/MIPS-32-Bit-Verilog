@@ -10,8 +10,8 @@ initial
         begin
         //128 instructions to be added here, each of 32 bits, but for sake of simplicity, only added 7 instructions
 
-        memdata[0] = 32'b00000000000000010001000000100010;
-        memdata[1] = 32'b00000000001000100001100000100100;
+        memdata[0] = 32'b00000000001000100001100000100100;
+        memdata[1] = 32'b00000000000000010001000000100010;
         memdata[2] = 32'b00000000010000010011000000100101;
         memdata[3] = 32'b00000001100010010101000000100000;
         memdata[4] = 32'b10001100000000010001000000100000;

@@ -10,9 +10,8 @@ reg [31:0] memdata [255:0];
 
 initial begin
 
-        //256 data to be added here, each being a 32-bit '0';for simplicity, added just 20 data
-
-	memdata[0] = 32'b00000000000000000000000000000000;
+     
+	  memdata[0] = 32'b00000000000000000000000000000000;
         memdata[1] = 32'b00000000000000000000000000000000;
         memdata[2] = 32'b00000000000000000000000000000000;
         memdata[3] = 32'b00000000000000000000000000000000;
@@ -40,11 +39,6 @@ initial begin
 
 always @(negedge clk)
 begin
-	//if(opcode==6'b100011)
-	//begin
-	//out = memdata[addr];	//In caller space, 'out' needs to be stored in the register file at the address of Rt given by the instruction
-	//end
-	
 	if(opcode==6'b101011)
 	begin
 	memdata[addr] = Rt;
