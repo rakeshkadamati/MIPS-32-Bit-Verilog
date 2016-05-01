@@ -1,15 +1,14 @@
 module instMem(inst,pc,clk);
-input clk;
 input [31:0] pc;
+input clk;
 output [31:0] inst;
 reg [31:0] inst;
+
 
 reg [31:0] memdata [127:0];
 
 initial
         begin
-        //128 instructions to be added here, each of 32 bits, but for sake of simplicity, only added 7 instructions
-
         memdata[0] = 32'b00000000001000100001100000100100;
         memdata[1] = 32'b00000000000000010001000000100010;
         memdata[2] = 32'b00000000010000010011000000100101;
