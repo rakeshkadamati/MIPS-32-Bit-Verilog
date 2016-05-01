@@ -19,8 +19,7 @@ endmodule
 module thirtytwobitadder(a,b,carryout,s,carryin);
 
 input carryin;
-input [31:0] a;
-input [31:0] b;
+input [31:0] a, b;
 output carryout;
 output [31:0] s;
 

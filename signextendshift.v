@@ -1,4 +1,4 @@
-module signExtend(in,out);
+module signExtend(in,out); //16 bit shift
 input [15:0] in;
 output [31:0] out;
 

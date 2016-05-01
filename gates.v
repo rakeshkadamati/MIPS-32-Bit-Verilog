@@ -1,4 +1,4 @@
-module AND(in1,in2,out);                //this module does a 32-bit AND operation
+module AND(in1,in2,out);//and operator
 
 input [31:0] in1;
 input [31:0] in2;
@@ -39,7 +39,7 @@ and A31(out[31],in1[31],in2[31]);
 
 endmodule
 
-module OR(in1,in2,out);                //this module does a 32-bit OR operation
+module OR(in1,in2,out);//or operation
 
 input [31:0] in1;
 input [31:0] in2;

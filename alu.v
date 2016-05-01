@@ -1,18 +1,13 @@
 module ALU(opcode,funct,in1,in2,result,rw,clk);
 input clk;
-input [5:0] opcode;
-input [5:0] funct;
-input [31:0] in1;
-input [31:0] in2;
-output [31:0] result;
+input [5:0] opcode, funct;
+input [31:0] in1, in2;
+output [31:0] result; //result of instruction
 reg [31:0] result;
 output rw;
-reg rw;  	//A signal that decides whether we write into file (if 1 -> write)
+reg rw;  	//0 means a read instruction, 1 means a write to register instruction
 
-wire [31:0] sum;
-wire [31:0] diff;
-wire [31:0] product;
-wire [31:0] sum_or;
+wire [31:0] sum, diff, product, sum_or;
 
 thirtytwobitadder ADD(in1,in2,carryout,sum,1'b0);
 thirtytwobitsubtractor SUBTRACT(in1,in2,carry,diff,1'b0);
@@ -24,19 +19,19 @@ begin
 
         if(opcode==6'b000000)
         begin
-                if(funct==6'b100000)
+                if(funct==6'b100000) //funct for add
                 begin
                         rw=1'b0;
                         result=sum;
                         rw=1'b1;
                 end
-                if(funct==6'b100010)
+                if(funct==6'b100010) //funct for subtract
                 begin
                         rw=1'b0;
                         result=diff;
                         rw=1'b1;
                 end
-                if(funct==6'b100100)
+                if(funct==6'b100100) //funct for multiply
                 begin
                         rw=1'b0;
                         result=product;
