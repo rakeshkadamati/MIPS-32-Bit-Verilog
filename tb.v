@@ -1,26 +1,15 @@
 module top;
 
-reg [31:0] in1;
-reg [31:0] in2;
+reg [31:0] in1, in2;
 reg [4:0] addr3;
 reg [31:0] data3;
 reg chksignal;
-reg [31:0] in;
-reg [31:0] address;
-wire [5:0] opcode;
-wire [5:0] funct;
-wire [31:0] pc;
-wire [31:0] inst;
-wire [4:0] rs;
-wire [4:0] rt;
-wire [4:0] rd;
+reg [31:0] in, address;
+wire [5:0] opcode, funct;
+wire [31:0] pc, inst;
+wire [4:0] rs, rt, rd;
 wire [15:0] addr;
-wire [31:0] result;
-wire [31:0] Rs;
-wire [31:0] Rt;
-wire [31:0] out;
-wire [31:0] extendaddr;
-wire [31:0] newpc;
+wire [31:0] result, Rs, Rt, out, extendaddr, newpc;
 
 clkGen CLK(clk);
 PC pc1(pc,in,clk);
