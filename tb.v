@@ -7,7 +7,6 @@ reg [31:0] data3;
 reg chksignal;
 reg [31:0] in;
 reg [31:0] address;
-
 wire [5:0] opcode;
 wire [5:0] funct;
 wire [31:0] pc;
@@ -25,7 +24,7 @@ wire [31:0] newpc;
 
 clkGen CLK(clk);
 PC pc1(pc,in,clk);
-InstructionMemory IM(inst,pc,clk);
+instMem IM(inst,pc,clk);
 Splitter SP(inst,opcode,rs,rt,rd,funct,addr);
 
 
@@ -33,12 +32,12 @@ ALU al(opcode,funct,in1,in2,result,rw,clk);
 
 RegisterFile RF(rw,rs,rt,Rs,Rt,addr3,data3,clk);
 
-DataMemory DM(opcode,Rt,address,clk,out);
+dataMem DM(opcode,Rt,address,clk,out);
 
-SignExtend SE(addr,extendaddr);  	//inp,oup
+signExtend SE(addr,extendaddr);
 
 
-PC_ALU alpc(newpc,pc,extendaddr,chksignal);	//chksignal to be used for deciding the amount of increment (+1 or +extendaddr)
+PC_ALU alpc(newpc,pc,extendaddr,chksignal);
 
 always @(*)
 begin
